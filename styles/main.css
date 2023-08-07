@@ -1,0 +1,138 @@
+:root{
+    --primary:tomato;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+    user-select: none;
+}
+body{
+    background-image: url(../assets/archLogo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #353535;
+    height:100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    overflow: hidden;
+}
+/*------------------------- WIDGETS -------------------------------*/
+.dateWidget{
+    background: rgba(255, 255, 255, 0.37);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(11.8px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    position: absolute;
+    padding:20px;
+    top:5vh;
+    right:3vw;
+    font-size:1.5rem;
+    color:white;
+    font-weight: bold;
+}
+/*------------------------- PROGRAMS ------------------------------*/
+.programs{
+    position: absolute;
+    top:5vw;
+    left:2vw;
+    background-color: pink;
+    /* height:80%; */
+    display: grid;
+    gap:5px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+.program{
+    margin:auto;
+    background-color: blue;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.program:hover,
+.program:focus{
+    opacity: 0.8;
+}
+.program img{
+    width:100px;
+    aspect-ratio: 1;
+    object-fit: cover;
+} 
+.program h1{
+    color:white;
+}
+/*------------------------- TASK BAR ------------------------------*/
+.taskBar{
+    background: rgba(255, 255, 255, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius:15px 15px 0 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-bottom: none;
+    height:100px;
+    position: absolute;
+    bottom:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.OSKey{
+    /* border-right:3px solid black; */
+    height: 100%;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.OSKey:hover,
+.OSKey:focus{
+    background-color:var(--primary);
+}
+.OSKey:active{
+    opacity: 0.7;
+}
+.tasks{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+.tasks .task{
+    height: 100%;
+    padding: 10px;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+.tasks .task:hover,
+.takss .task:focus{
+    background-color:var(--primary);
+}
+.tasks .task:active{
+    opacity: 0.7;
+}
+/*=================== SETTINGS ========================*/
+.settings{
+    /* border-left:3px solid black; */
+    height: 100%;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.settings:hover,
+.settings:focus{
+    background-color:var(--primary);
+}
+.settings:active{
+    opacity: 0.7;
+}
