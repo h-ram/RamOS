@@ -10,6 +10,8 @@ setInterval(()=>{
 
 //================ Opening Windows =================
 const executables = document.querySelectorAll(".exe")
+// const tasksStack = document.querySelector(".taskBar .tasks")
+let topWindow = 12;
 executables.forEach((exe) =>{
     exe.addEventListener("click",()=>{
         const id = exe.id;
@@ -41,13 +43,13 @@ executables.forEach((exe) =>{
             })
         })
         //================ Refocusing Windows =================
-        // var topWindow = 2;
-        // currentWindow.addEventListener("mousedown",()=>{
-        //     if(currentWindow.style.zIndex >= topWindow) return
-        //     currentWindow.style.zIndex = topWindow+1;
-        //     topWindow++;
-        //     console.log("jamp")
-        // })
+        topWindow++;
+        currentWindow.style.zIndex = topWindow;
+        currentWindow.addEventListener("mousedown",()=>{
+            if(currentWindow.style.zIndex == topWindow) return
+            topWindow++
+            currentWindow.style.zIndex = topWindow;
+        })
         //================ Minimizing Windows =================
         const hideBtn = currentWindow.querySelector(`.hideButton`)
         hideBtn.addEventListener("click",()=>{

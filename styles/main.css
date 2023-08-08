@@ -1,6 +1,16 @@
 :root{
     --primary:tomato;
 }
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(197, 197, 197);
+    border-radius:100px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: red;
+}
 *{
     box-sizing: border-box;
     padding: 0;
@@ -76,7 +86,7 @@ body{
 }
 /*------------------------- TASK BAR ------------------------------*/
 .taskBar{
-    z-index: 10;
+    z-index: 9999;
     background: rgba(255, 255, 255, 0.19);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius:15px 15px 0 0;
@@ -94,7 +104,6 @@ body{
 }
 
 .OSKey{
-    /* border-right:3px solid black; */
     height: 100%;
     padding: 15px;
     cursor: pointer;
@@ -147,10 +156,52 @@ body{
     opacity: 0.7;
 }
 
-
+/*------------------------- ANIMATIONS ------------------------------*/
+@keyframes closeWindow{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+        display:none;
+    }
+}
+@keyframes openWindow{
+    0%{
+        display: none;
+        transform: translateY(-300%) scale(0.5);
+    }
+    100%{
+        display: block;
+        transform:  scale(1);
+    }
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes slideUp {
+    from{}
+    to{ 
+        transform:translateY(-100%);
+        display: none;
+    }
+}
+@keyframes pulse {
+    0%,100%{
+        box-shadow:none;
+    }50%{
+        box-shadow:0 0 300px 100px purple;
+    }
+}
 /*------------------------- WINDOW ------------------------------*/
 .window{
-    z-index: 9;
+    z-index: 10;
     position: absolute;
     width:50%;
     height:60%;
@@ -158,6 +209,14 @@ body{
     border-radius:10px;
     overflow: hidden;
     transform: translateX(-200%); /*when loading*/
+    padding-top:35px;
+}
+.window main{
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .titleBar{
     position: absolute;
@@ -225,53 +284,11 @@ body{
     opacity:0;
 }
 
-/*------------------------- ANIMATIONS ------------------------------*/
-@keyframes closeWindow{
-    0%{
-        display:block;
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(0);
-        display:none;
-    }
-}
-@keyframes openWindow{
-    0%{
-        display: none;
-        transform: translateY(-300%) scale(0.5);
-    }
-    100%{
-        display: block;
-        transform:  scale(1);
-    }
-}
-@keyframes fadeOut {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-        display: none;
-    }
-}
-@keyframes slideUp {
-    from{}
-    to{ 
-        transform:translateY(-100%);
-        display: none;
-    }
-}
-@keyframes pulse {
-    0%,100%{
-        box-shadow:none;
-    }50%{
-        box-shadow:0 0 300px 100px purple;
-    }
-}
-/*------------------------- TERMINAL ------------------------------*/
+
+/*=================== TERMINAL ========================*/
 .terminal__window{
     background-color: #2D0922;
+    color: white;
 }
 .folder__window{
     background-color: orange;
@@ -279,6 +296,62 @@ body{
 .browser__window{
     background-color: cyan;
 }
+.projects__window{
+
+}
+/*=================== ACOUNTS ========================*/
+.accounts__window{
+    background-color: #000000;
+    color:white;
+}
+.accounts__window h1{
+    text-align: center;
+    font-size: 2rem;
+    /* margin:10px; */
+    padding:10px;
+    /* border-bottom:2px solid white; */
+}
+.accounts__window .grid{
+    padding:20px;
+    width: 100%;
+    flex:1fr;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap:10px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+.accounts__window .account{
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.accounts__window .account:hover,
+.accounts__window .account:focus{
+    transition-duration: 0.2s;
+    opacity: 0.7;
+}
+.accounts__window .account:active{
+    opacity:0.4;
+}
+.accounts__window .account img{
+    width:100px;
+    padding:10px;
+    aspect-ratio: 1;
+    border-radius: 30px;
+}
+.accounts__window .account h2{
+}
+/*=================== MEMES========================*/
+.memes__window{
+    background-color: green;
+}
+
 /*------------------------- LOADING SCREEN------------------------------*/
 .loadingScreen{
     z-index:1000;
@@ -300,4 +373,16 @@ body{
     border:20px solid white;
     border-radius: 1000px ;
     animation: pulse 2s infinite forwards;
+}
+
+
+/********* TO BE REMOVED *************/
+.msg404{
+    font-size:6rem;
+    margin:50px;
+    text-align: center;
+}
+.msgerror{
+    font-size:1.5rem;
+    text-align: center;
 }
