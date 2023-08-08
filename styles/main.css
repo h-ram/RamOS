@@ -354,7 +354,7 @@ body{
 
 /*------------------------- LOADING SCREEN------------------------------*/
 .loadingScreen{
-    z-index:1000;
+    z-index:99999;
     position: fixed;
     height:100vh;
     width: 100vw;
