@@ -19,6 +19,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family: monospace;
+    position: relative;
     overflow: hidden;
 }
 /*------------------------- WIDGETS -------------------------------*/
@@ -42,7 +43,6 @@ body{
     position: absolute;
     top:5vw;
     left:2vw;
-    background-color: pink;
     /* height:80%; */
     display: grid;
     gap:5px;
@@ -50,8 +50,8 @@ body{
     grid-template-rows: repeat(2,1fr);
 }
 .program{
+    width:auto;
     margin:auto;
-    background-color: blue;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -62,8 +62,12 @@ body{
 .program:focus{
     opacity: 0.8;
 }
+.program:active{
+    opacity: 0.6;
+}
 .program img{
-    width:100px;
+    padding:10px;
+    width:100px;;
     aspect-ratio: 1;
     object-fit: cover;
 } 
@@ -72,6 +76,7 @@ body{
 }
 /*------------------------- TASK BAR ------------------------------*/
 .taskBar{
+    z-index: 10;
     background: rgba(255, 255, 255, 0.19);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius:15px 15px 0 0;
@@ -108,14 +113,15 @@ body{
     align-items: center;
     gap:5px;
 }
-.tasks .task{
+.task{
     height: 100%;
     padding: 10px;
     aspect-ratio: 1;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
-.tasks .task:hover,
-.takss .task:focus{
+.task:hover,
+.task:focus{
     background-color:var(--primary);
 }
 .tasks .task:active{
@@ -135,4 +141,104 @@ body{
 }
 .settings:active{
     opacity: 0.7;
+}
+
+
+/*------------------------- WINDOW ------------------------------*/
+.window{
+    z-index: 9;
+    position: absolute;
+    width:50%;
+    height:60%;
+    background-color: tomato;
+    border-radius:10px;
+    overflow: hidden;
+    transform: translateX(-200%); /*when loading*/
+}
+.titleBar{
+    position: absolute;
+    top:0;
+    height:35px;
+    width:100%;
+    background-color: #d7dee9;
+    cursor: pointer;
+    cursor:grab;
+    display: flex;
+    align-items: center;
+}
+.titleBar:active{
+    cursor:grabbing;
+}
+.titleBar button{
+    width:20px;
+    aspect-ratio: 1;
+    border:none;
+    border-radius: 100%;
+    cursor: pointer !important;
+    margin-left:10px;
+    position: relative;
+}
+.titleBar button:hover{
+    opacity:0.8;
+}
+.closeButton{
+    background-color: red;
+}
+.closeButton::after{
+    content: "X";
+    display: block;
+    font-weight: bold;
+    position: absolute;
+    top:50%;
+    left:52%;
+    transform:translate(-50%,-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.hideButton{
+    background-color: yellowgreen;
+}
+.hideButton::after{
+    content: "";
+    height:2px;
+    width:7px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    opacity: 0;
+}
+.hideButton:hover::after,
+.closeButton:hover::after{
+    transition-duration: 0.2s;
+    opacity: 1;
+}
+.closeButton:active::after ,
+.hideButton:active::after{
+    opacity:0;
+}
+
+/*------------------------- ANIMATIONS ------------------------------*/
+@keyframes closeWindow{
+    0%{
+        display:block;
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+        display:none;
+    }
+}
+@keyframes openWindow{
+    0%{
+        display: none;
+        transform: translateY(-300%) scale(0.5);
+    }
+    100%{
+        display: block;
+        transform:  scale(1);
+    }
 }

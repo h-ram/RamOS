@@ -8,39 +8,54 @@
     <title>RamOS</title>
 </head>
 <body>
+    <div id="terminalWnd" class="window terminalWindow">
+        <div class="titleBar">
+            <button class="closeButton"></button>
+            <button class="hideButton"></button>
+        </div>
+    </div>
+    <!-- <div class="window folderWindow">
+        <div class="titleBar">
+            <button class="closeButton"></button>
+            <button class="hideButton"></button>
+        </div>
+    </div>
+    <div class="window browserWindow">
+        <div class="titleBar">
+            <button class="closeButton"></button>
+            <button class="hideButton"></button>
+        </div>
+    </div> -->
+    
     <div class="dateWidget">00:00:00 AM</div>
     <div class="programs">
-        <div class="program">
-            <img src="./assets/folder.png" alt="browser">
+        <div class="program exe">
+            <img src="./assets/folder.png" alt="browser" draggable="false">
             <h1>Folder</h1>
         </div>
-        <div class="program">
-            <img src="./assets/browser.png" alt="browser">
+        <div class="program exe">
+            <img src="./assets/browser.png" alt="browser" draggable="false">
             <h1>Browser</h1>
         </div>
-        <div class="program">
-            <img src="./assets/browser.png" alt="browser">
+        <div class="program exe">
+            <img src="./assets/github.png" alt="browser" draggable="false">
             <h1>Github</h1>
         </div>
-        <div class="program">
-            <img src="./assets/browser.png" alt="browser">
+        <div class="program exe">
+            <img src="./assets/leetcode.png" alt="browser" draggable="false">
             <h1>LeetCode</h1>
         </div>
-        <div class="program">
-            <img src="./assets/browser.png" alt="browser">
+        <div class="program exe">
+            <img src="./assets/linkedin.png" alt="browser" draggable="false">
             <h1>Linkedin</h1>
-        </div>
-        <div class="program">
-            <img src="./assets/browser.png" alt="browser">
-            <h1>Youtube</h1>
         </div>
     </div>
     <div class="taskBar">
         <img class="OSKey"src="./assets/archLogo.png" alt="OS Key" draggable="false" />
-        <div class="tasks">
-            <img class="task" src="./assets/terminal.png" alt="terminal">
-            <img class="task" src="./assets/folder.png" alt="folder">
-            <img class="task" src="./assets/browser.png" alt="browser">
+        <div class="tasks exe">
+            <img class="task exe terminalExe" src="./assets/terminal.png" alt="terminal">
+            <img class="task exe" src="./assets/folder.png" alt="folder">
+            <img class="task exe" src="./assets/browser.png" alt="browser">
         </div>    
         <img class ="settings"src="./assets/gear.png" alt="settings" draggable="false">
     </div>
