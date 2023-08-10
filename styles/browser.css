@@ -1,0 +1,110 @@
+/*=================== ACOUNTS ========================*/
+.accounts__window{
+    background-color: #000000;
+    color:white;
+}
+.accounts__window h1{
+    text-align: center;
+    font-size: 2rem;
+    /* margin:10px; */
+    padding:10px;
+    /* border-bottom:2px solid white; */
+}
+.accounts__window .grid{
+    padding:20px;
+    width: 100%;
+    flex:1fr;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap:10px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+.accounts__window .account{
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.accounts__window .account:hover,
+.accounts__window .account:focus{
+    transition-duration: 0.2s;
+    opacity: 0.7;
+}
+.accounts__window .account:active{
+    opacity:0.4;
+}
+.accounts__window .account img{
+    width:100px;
+    padding:10px;
+    aspect-ratio: 1;
+    border-radius: 30px;
+}
+.accounts__window .account h2{
+}
+/*=================== PROJECTS ========================*/
+/*=================== SETTINGS ========================*/
+/*=================== START MENU ======================*/
+/*=================== TERMINAL ========================*/
+.terminal__window{
+    background-color: #2D0922;
+    color: white;
+    /* transform: translate(-5px,5px); */
+}
+/*=================== BROWSER =========================*/
+.browser__window{
+    background-color: cyan;
+    transform: translateX(-10px,030px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+}
+.browser__window img{
+    width:60%;
+    object-fit: cover;
+}
+.browser__window form{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    width: 100%;
+}
+.browser__window form input{
+    width:70%;
+    padding:5px 10px;
+    font-size:2vw;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 3px 10px 2px black;
+    cursor: pointer;
+}
+.browser__window form button{
+    font-size:2vw;
+    padding:10px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "VT323",monospace;
+    letter-spacing: 2px;
+    transition: background-color 0.2s;
+}
+.browser__window form button:hover,
+.browser__window form button:focus{
+    background-color: tomato;
+}
+.browser__window form button:active{
+    opacity: 0.6; 
+}
+/*=================== MEMES========================*/
+.memes__window{
+    background-color: green;
+}
