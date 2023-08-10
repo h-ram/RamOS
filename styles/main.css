@@ -162,9 +162,11 @@ body{
     0%{
         transform: scale(1);
     }
-    100%{
+    30%{
         transform: scale(0);
-        display:none;
+    }
+    100%{
+        /* display:flex; */
     }
 }
 @keyframes openWindow{
@@ -330,4 +332,41 @@ body{
 .msgerror{
     font-size:1.5rem;
     text-align: center;
+}
+/*----------------------- SCREEN SIZE GUARD ---------------------------------*/
+.screenSizeGuard{
+    display: none; /* gets toggled */
+    position: fixed;
+    height:100vh;
+    width:100vw;
+    background-color: black;
+    z-index: 99999;
+}
+.screenSizeGuard::before{
+    content:"WARNING";
+    background-color: red;
+    position: absolute;
+    font-size:10vw;
+    font-family: "VT323", monospace;
+    padding:10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.screenSizeGuard::after{
+    content:"Resolution Too Small";
+    color: white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size:6vw;
+    font-family: "VT323", monospace;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@media screen and (max-width:800px) {
+    .screenSizeGuard{
+        display: block;
+    }
 }

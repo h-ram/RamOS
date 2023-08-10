@@ -47,7 +47,97 @@
 .accounts__window .account h2{
 }
 /*=================== PROJECTS ========================*/
+.projects-exe{
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+}
+.projects-exe .tray{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:15px;
+    padding:20px;
+    overflow-x: hidden;
+}
+.projects-exe .tray .project{
+    display: flex;
+    align-items: center;
+    gap:1vw;
+    flex-shrink: 0;
+    background-color: yellow;
+    height:30%;
+    border-radius:10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.projects-exe .tray .project img{
+    height:100%;
+    width: 40%;
+    object-position: center;
+    object-fit: cover;
+    background-color: green;
+}
+.projects-exe .tray .project h1{
+    font-family: "VT323",monospace;
+    font-size:2vw;
+    letter-spacing: 3px;
+}
+.projects-exe .preview{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projects-exe .preview .card{
+    position: relative;
+    height:90%;
+    width: 80%;
+    background-color: violet;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 6px 5px 1px #aaff00;
+    transform: box-shadow 0.2s;
+}
+
+.projects-exe .preview .card:hover{
+    box-shadow: 6px 8px 7px 1px #aaff00;
+}
+.projects-exe .preview .card img{
+    height:50%;
+    width: 100%;
+    object-fit: cover;
+    background-color: black;
+}
+.projects-exe .preview .card h1{
+    margin:1vh 1vw;
+    font-size: 2vw;
+    font-family: "VT323",monospace;
+    letter-spacing: 2px;
+}
+.projects-exe .preview .card p{
+    margin:.2vh 1vw;
+    font-size: 1.5vw;
+    font-family: "VT323",monospace;
+
+}
+.projects-exe .preview .card button{
+    position: absolute;
+    bottom:2vh;
+    right:1vw;
+    padding: 1vh 1vw;
+    border: none;
+    font-family: "VT323",monospace;
+    font-size:2vw;
+    border-radius:5px;
+    cursor: pointer;
+}
 /*=================== SETTINGS ========================*/
+
 /*=================== START MENU ======================*/
 /*=================== TERMINAL ========================*/
 .terminal__window{
@@ -63,7 +153,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
 }
 .browser__window img{
     width:60%;
@@ -105,6 +194,37 @@
     opacity: 0.6; 
 }
 /*=================== MEMES========================*/
-.memes__window{
-    background-color: green;
+.memes-exe{
+   background-color: black;
+   display: block;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap:2vw;
+}
+.memes-exe img{
+    height:90%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.memes-exe .newMeme{
+    height:90%;
+    left:0;
+    font-size: 3vw;
+    font-family: "VT323",monospace;
+    letter-spacing: 2px;
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.memes-exe .newMeme:hover,
+.memes-exe .newMeme:focus{
+    background-color: var(--primary);
+}
+.memes-exe .newMeme:active{
+    opacity:0.6;
 }

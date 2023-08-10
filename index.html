@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/browser.css">
+    <link rel="stylesheet" href="./styles/programs.css">
     <link rel="icon" href="./assets/archLogo.png">
     <title>RamOS</title>
 </head>
@@ -53,13 +53,35 @@
         </form>
     </div>
     <!--======================= PROJECTS =============================-->
-    <div id="w-4" class="window projects__window">
+    <div id="w-4" class="window projects-exe">
         <div class="titleBar">
             <button class="closeButton"></button>
             <button class="hideButton"></button>
         </div>
-        <h1 class="msg404">404</h1>
-        <h2 class="msgerror">Content Is Under Construction :)</h2>
+        <div class="tray">
+            <div class="project">
+                <img src="./assets/ramos.PNG" alt="project" draggable="false">
+                <h1>RamOS</h1>
+            </div>
+            <div class="project">
+                <img src="./assets/ramshPreview.PNG" alt="project" draggable="false">
+                <h1>RamSH</h1>
+            </div>
+            <div class="project">
+                <img src="./assets/archLogo.png" alt="project" draggable="false">
+                <h1>Portfolio</h1>
+            </div>        
+ 
+  
+        </div>
+        <div class="preview">
+            <div class="card">
+                <img src="./assets/ramos.png" alt="preview" draggable="false"    >
+                <h1>Project Name something long</h1>
+                <p>Project desc this is a description about something i liek a lot please help</p>
+                <button>Visit</button>
+            </div>
+        </div>
     </div>
     <!--======================= ACCOUNTS =============================-->
     <div id="w-5" class="window accounts__window">
@@ -69,7 +91,6 @@
         </div>
 
         <main>
-            <h1>My Accounts</h1>
             <div class="grid">
                 <div class="account"> 
                     <a href="https://github.com/h-ram" target="_blank" draggable="false">
@@ -90,16 +111,41 @@
                     <h2>LeetCode</h2>
                 </div>
             </div>
+            <div class="list">
+                <div class="item">
+                    <img src="./assets/archLogo.png" alt="account" draggable="false">
+                    <h1>name</h1>
+                </div>
+                <div class="item">
+                    <img src="./assets/archLogo.png" alt="account" draggable="false">
+                    <h1>name</h1>
+                </div>
+                 <div class="item">
+                    <img src="./assets/archLogo.png" alt="account" draggable="false">
+                    <h1>name</h1>
+                </div>           
+                <div class="item">
+                    <img src="./assets/archLogo.png" alt="account" draggable="false">
+                    <h1>name</h1>
+                </div>
+                <div class="item">
+                    <img src="./assets/archLogo.png" alt="account" draggable="false">
+                    <h1>name</h1>
+                </div>
+            </div>
+            
         </main>
     </div>
-    <div id="w-6" class="window memes__window">
+    <!--======================= MEMES  ===============================-->
+    <div id="w-6" class="window memes-exe">
         <div class="titleBar">
             <button class="closeButton"></button>
             <button class="hideButton"></button>
         </div>
-        <h1 class="msg404">404</h1>
-        <h2 class="msgerror">Content Is Under Construction :)</h2>
+        <img src="./assets/archLogo.png" alt="meme" draggable="false">
+        <button class="newMeme">New Meme</button>
     </div>
+    <!--======================= SETTINGS =============================-->
     <div id="w-00" class="window browser__window">
         <div class="titleBar">
             <button class="closeButton"></button>
@@ -133,7 +179,9 @@
         </div>    
         <img id="00" class ="settings exe"src="./assets/gear.png" alt="settings" draggable="false">
     </div>
-   <script type="module" src="./scripts/main.js" ></script>
-   <script type="module" src="./scripts/browser.js" ></script>
+    <div class="screenSizeGuard"></div>
+    <script type="module" src="./scripts/main.js" ></script>
+    <script type="module" src="./scripts/browser.js" ></script>
+    <script type="module" src="./scripts/memes.js" ></script>
 </body>
 </html>
