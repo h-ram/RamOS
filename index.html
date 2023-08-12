@@ -12,7 +12,13 @@
     <!-- <div class="loadingScreen">
         <img src="./assets/loadingIcon.png" alt="loadingIcon" draggable="false" />
     </div> -->
-    <div class="dateWidget">00:00:00 AM</div>
+    <div class="brightness-filter"></div>
+    <!--======================= WIDGETS =============================-->
+    <div class="widgets">
+        <div class="widget clock">00:00:00 AM</div>
+        <div class="widget specs">SystemInfo</div>
+        <div class="widget weather">China 69°</div>
+    </div>
     <div id="w-0" class="window ">
         <div class="titleBar">
             <button class="closeButton"></button>
@@ -145,15 +151,8 @@
         <img src="./assets/archLogo.png" alt="meme" draggable="false">
         <button class="newMeme">New Meme</button>
     </div>
-    <!--======================= SETTINGS =============================-->
-    <div id="w-00" class="window browser__window">
-        <div class="titleBar">
-            <button class="closeButton"></button>
-            <button class="hideButton"></button>
-        </div>
-        <h1 class="msg404">404</h1>
-        <h2 class="msgerror">Content Is Under Construction :)</h2>
-    </div>
+    
+    <!--==============================================================-->
     <div class="programs">
         <div id="4"class="program exe">
             <img src="./assets/projects.png" alt="projects" draggable="false">
@@ -171,17 +170,42 @@
         
     </div>
     <div class="taskBar">
+
         <img id="0" class="OSKey exe"src="./assets/archLogo.png" alt="OS Key" draggable="false" />
         <div class="tasks exe">
             <img id="1" class="task exe terminalExe" src="./assets/terminal.png" alt="terminal">
             <img id="2" class="task exe" src="./assets/folder.png" alt="folder">
             <img id="3" class="task exe" src="./assets/browser.png" alt="browser">
         </div>    
-        <img id="00" class ="settings exe"src="./assets/gear.png" alt="settings" draggable="false">
+        <!--======================= SETTINGS =============================-->
+        <div class="settings">
+            <div class="settings-window">
+                <div class="brightness-container">
+                    <input class="brightness" type="range" min="10" max="100" value ="100">
+                    <img src="./assets/brightness.png" alt="brightness" draggable="false">
+                </div>
+                <div class="widgetSwitches">
+                    <label for="clock__switch" class="switch">
+                        <input id="clock__switch" type="checkbox" checked>
+                        Clock 
+                    </label>
+                    <label for="specs__switch" class="switch">
+                        <input id="specs__switch" type="checkbox">
+                        System
+                    </label>
+                    <label for="weather__switch" class="switch">
+                        <input id="weather__switch" type="checkbox">
+                        Weather 
+                    </label>
+                </div>
+            </div>
+            <img class="settings-exe"src="./assets/gear.png" alt="settings" draggable="false">
+        </div>
     </div>
     <div class="screenSizeGuard"></div>
     <script type="module" src="./scripts/main.js" ></script>
     <script type="module" src="./scripts/browser.js" ></script>
     <script type="module" src="./scripts/memes.js" ></script>
+    <script type="module" src="./scripts/settings.js" ></script>
 </body>
 </html>

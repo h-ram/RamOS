@@ -34,20 +34,31 @@ body{
     overflow: hidden;
 }
 /*------------------------- WIDGETS -------------------------------*/
-.dateWidget{
+.widgets{
+    position: absolute;
+    top:5vh;
+    right:3vw;
+    height:50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5vh;
+}
+.widgets .widget{
     background: rgba(255, 255, 255, 0.37);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(11.8px);
     -webkit-backdrop-filter: blur(11.8px);
     border: 1px solid rgba(255, 255, 255, 1);
-    position: absolute;
     padding:20px;
-    top:5vh;
-    right:3vw;
     font-size:1.5rem;
     color:white;
     font-weight: bold;
+}
+.widgets .specs,
+.widgets .weather{
+    display: none;
 }
 /*------------------------- PROGRAMS ------------------------------*/
 .programs{
@@ -101,9 +112,10 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
+/*=================== START MENU ======================*/
 .OSKey{
     height: 100%;
     padding: 15px;
@@ -143,17 +155,108 @@ body{
 }
 /*=================== SETTINGS ========================*/
 .settings{
-    /* border-left:3px solid black; */
+    width:100px;
     height: 100%;
-    padding: 15px;
+    position: relative;
+    border-radius: 0 15px 0 0;
+}
+.settings-window {
+    width:280px;
+    height:300px;
+    background-color: white;
+    position: absolute;
+    top:-310%;
+    left:50%;
+    transform: translate(-50%) ;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: closeSettings 1s 0s forwards;
+    display: none; /*gets toggled*/
+    justify-content: space-between;
+    align-items: center;
+    border:2px solid blue;
+}
+.settings-window.isActive{
+    display: flex;
+    animation: openSettings 1s 0s forwards;
+}
+.settings-window .brightness-container{
+    height: 100%;
+    width:30%;
+    position: relative;
+}
+
+.brightness-container .brightness{
+    cursor: pointer;
+    position: absolute;
+    top:55%;
+    left:50%;
+    transform: translate(-50%,-50%) rotate(-90deg);
+}
+.brightness-container img{
+    width:40px;
+    position: absolute;
+    left:50%;
+    top:15%;
+    transform: translate(-50%,0%);
+}
+
+/*!!!!!!!!!!!!! BRIGHTNESS FILTER !!!!!!!!!!!!!!!*/
+.brightness-filter{
+    background-color: black;
+    height:100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11111;
+    opacity: 0;
+    pointer-events: none;
+}
+.widgetSwitches{
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap:30px;
+    padding-left:10px;
+    border-left:2px solid black;
+}
+.widgetSwitches .switch{
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "VT323",monospace;
+    letter-spacing: 3px;
+    text-align: center;
+    display: flex;
+    align-items: center; 
+    gap:30px;
+    cursor: pointer;
+}
+.widgetSwitches .switch input{
+    height:30px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.settings-exe{
+    border-radius: 0 15px 0 0;
+    width:101%;
+    padding:15px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
-.settings:hover,
-.settings:focus{
+.settings-exe:hover,
+.settings-exe:focus{
     background-color:var(--primary);
 }
-.settings:active{
+.settings-exe:active{
     opacity: 0.7;
 }
 
@@ -166,7 +269,7 @@ body{
         transform: scale(0);
     }
     100%{
-        /* display:flex; */
+        display:flex;
     }
 }
 @keyframes openWindow{
@@ -200,6 +303,26 @@ body{
         box-shadow:none;
     }50%{
         box-shadow:0 0 300px 100px purple;
+    }
+}
+@keyframes closeSettings {
+    from{
+        transform: translate(-50%,0%) scale(1);
+        display: flex;
+    }
+    to{ 
+        transform: translate(-50%,100%) scale(0);
+        display: none;
+    }
+}
+@keyframes openSettings {
+    from{
+        transform: translate(-50%,100%) scale(0);
+        display: none;
+    }
+    to{ 
+        transform: translate(-50%,0%) scale(1);
+        display: flex;
     }
 }
 /*------------------------- WINDOW ------------------------------*/

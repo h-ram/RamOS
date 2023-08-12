@@ -3,7 +3,6 @@ fetch("https://api.imgflip.com/get_memes")
 .then((response)=>response.json())
 .then((data)=> {
     memes = data.data.memes;
-    console.log(memes)
 })
 .catch((error)=>{console.log("error : "+ error)})
 
