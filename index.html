@@ -9,9 +9,9 @@
     <title>RamOS</title>
 </head>
 <body>
-    <!-- <div class="loadingScreen">
+    <div class="loadingScreen">
         <img src="./assets/loadingIcon.png" alt="loadingIcon" draggable="false" />
-    </div> -->
+    </div>
     <div class="brightness-filter"></div>
     <!--======================= WIDGETS =============================-->
     <div class="widgets">
@@ -170,8 +170,14 @@
         
     </div>
     <div class="taskBar">
-
-        <img id="0" class="OSKey exe"src="./assets/archLogo.png" alt="OS Key" draggable="false" />
+        <!--======================= START MENU =============================-->
+        <div class="startMenu">
+            <img class="startMenu-exe"src="./assets/archLogo.png" alt="OSKey" draggable="false" />
+            <div class="start__buttons">
+                <img class="shutdown__button" src="./assets/shutdown.png" alt="shutdown " draggable="false">
+                <img class="reboot__button" src="./assets/reboot.png" alt="reboot" draggable="false">
+            </div>
+        </div>
         <div class="tasks exe">
             <img id="1" class="task exe terminalExe" src="./assets/terminal.png" alt="terminal">
             <img id="2" class="task exe" src="./assets/folder.png" alt="folder">
@@ -203,9 +209,15 @@
         </div>
     </div>
     <div class="screenSizeGuard"></div>
+    <div class="screen shutdownScreen"></div>
+    <div class="screen rebootScreen"></div>
+    <div class="screen offScreen">
+        <img class="powerBtn" src="./assets/bootup.png" alt="power" draggable="false">
+    </div>
     <script type="module" src="./scripts/main.js" ></script>
     <script type="module" src="./scripts/browser.js" ></script>
     <script type="module" src="./scripts/memes.js" ></script>
+    <script type="module" src="./scripts/startMenu.js" ></script>
     <script type="module" src="./scripts/settings.js" ></script>
 </body>
 </html>

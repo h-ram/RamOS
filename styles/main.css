@@ -247,7 +247,7 @@ body{
 
 .settings-exe{
     border-radius: 0 15px 0 0;
-    width:101%;
+    width:100%;
     padding:15px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -260,6 +260,111 @@ body{
     opacity: 0.7;
 }
 
+/*=================== START MENU ========================*/
+.startMenu{
+    width:100px;
+    height:100%;
+    border-radius: 15px 0 0 0 ;
+}
+.startMenu-exe{
+    width:100%;
+    padding:15px;
+    border-radius: 15px 0 0 0 ;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.startMenu-exe:hover,
+.startMenu-exe:focus{
+    background-color:var(--primary);
+}
+.startMenu-exe:active{
+    opacity: 0.7;
+}
+.start__buttons{
+    background-color: rgb(28, 28, 28);
+    position: absolute;
+    top:40%;
+    left:0;
+    transform: translate(-110%,-50%);
+    padding:5px;
+    border-radius:10px;
+    border:3px solid tomato;
+    display: none; /* gets toggled */
+    animation: closeStartMenu 1s 0s forwards;
+}
+.start__buttons.isActive{
+    display: flex;
+    animation: openStartMenu 1s 0s forwards; 
+}
+.start__buttons img{
+    width:80px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius:10px;
+    padding:10px;
+}
+.start__buttons img:hover,
+.start__buttons img:focus{
+    background-color: #aaff00;
+}
+.start__buttons img:active{
+    opacity: 0.6;
+}
+/*!!!!!!!!!!!!!!!!! SHUTDOWN SCREEN !!!!!!!!!!!!!!!!*/
+.screen{
+    position: fixed;
+    background-color: black;
+    height:100vh;
+    width:100vw;
+    z-index: 10000;
+    position: relative;
+    display: none;
+}
+.screen::after{
+    content: "";
+    color:white;
+    font-size:5vw;
+    font-family: "VT323",monospace;
+    letter-spacing:3px ;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.screen.isActive{
+    display: block;
+    animation: fadeIn 1.5s 0s forwards; 
+}
+.shutdownScreen::after{
+    animation: shutdown 5s infinite forwards; 
+}
+.rebootScreen::after{
+    animation: reboot 5s infinite forwards;
+}
+.offScreen{
+    z-index: 10001;
+    position: relative;
+    position: fixed;
+    top:0;
+}
+.offScreen img{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:8vw;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10px;
+    transition: background-color 0.2s;
+}
+.offScreen img:hover{
+    background-color: white;
+}
+.offScreen img:active{
+    opacity:0.6;
+}
 /*------------------------- ANIMATIONS ------------------------------*/
 @keyframes closeWindow{
     0%{
@@ -290,6 +395,17 @@ body{
         opacity: 0;
         display: none;
     }
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        display: none;
+    }
+    to{
+        opacity: 1;
+        display: block;
+    }
+    
 }
 @keyframes slideUp {
     from{}
@@ -323,6 +439,78 @@ body{
     to{ 
         transform: translate(-50%,0%) scale(1);
         display: flex;
+    }
+}
+@keyframes closeStartMenu {
+    from{
+        transform: translate(-110%,-50%) scale(1);
+        display: flex;
+    }
+    to{
+        transform: translate(-30%,-50%) scale(0);
+        display: none;
+    }
+}
+@keyframes openStartMenu{
+    from{
+        transform: translate(-30%,-50%) scale(0);
+        display: none;
+    }
+    to{
+        transform: translate(-110%,-50%) scale(1);
+        display: flex;
+    }
+}
+@keyframes shutdown {
+    0%,100%{
+        content: "Shutting Down";
+        opacity: 1;
+    }
+    10%,90%{
+        content: "Shutting Down .";
+        opacity: 0.2;
+    }
+    20%,80%{
+        content: "Shutting Down ..";
+        opacity: 1;
+    }
+    30%,70%{
+        content: "Shutting Down ...";
+        opacity: 0.2;
+    }
+    40%,60%{
+        content: "Shutting Down ....";
+        opacity: 1;
+    }
+    50%{
+        content: "Shutting Down .....";
+        opacity: 0.2;
+    }
+}
+@keyframes reboot{
+    0%,100%{
+        content: "Rebooting";
+        opacity: 1;
+    }
+    10%,90%{
+        content: "Rebooting .";
+        opacity: 0.2;
+    }
+    20%,80%{
+        content: "Rebooting ..";
+        opacity: 1;
+    }
+    30%,70%{
+        content: "Rebooting ...";
+        opacity: 0.2;
+    }
+    40%,60%{
+        content: "Rebooting ....";
+        opacity: 1;
+    }
+    50%{
+        content: "Rebooting .....";
+        opacity: 0.2;
     }
 }
 /*------------------------- WINDOW ------------------------------*/
