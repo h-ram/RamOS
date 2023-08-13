@@ -225,15 +225,57 @@
    align-items: center;
    gap:2vw;
 }
-.memes-exe img{
-    height:90%;
+
+.memes-exe .meme{
+    height: 90%;
     aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+}
+.memes-exe .meme img{
+    height:100%;
+    width: 100%;
     object-fit: contain;
     border-radius: 10px;
     overflow: hidden;
 }
+.memes-exe .meme .phrase{
+    background-color: red;
+    position: absolute;
+    left:70%;
+    transform: translate(-50%);
+    font-size:2vw;
+    cursor: grab;
+    /* padding: 5px; */
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
+}
+.memes-exe .meme .phrase:active{
+    cursor: grabbing;
+    opacity: 0.8;
+}
+.memes-exe .meme .text1{top:10%;}
+.memes-exe .meme .text2{top:30%;}
+.memes-exe .meme .text3{top:50%;}
+.memes-exe .meme .text4{top:70%;}
+.memes-exe .meme .text5{top:90%;}
+.memes-exe .panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+    width:30%;
+}
+.memes-exe input{
+    height:13%;
+    border-radius: 5px;
+    text-align: center;
+    font-size:2vw;
+    border: 2px solid tomato;
+    outline: none;
+}
 .memes-exe .newMeme{
-    height:90%;
     left:0;
     font-size: 3vw;
     font-family: "VT323",monospace;
