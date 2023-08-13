@@ -13,15 +13,11 @@
 .accounts__window .grid{
     padding:20px;
     width: 100%;
-    flex:1fr;
+    flex:1;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr);
-    gap:10px;
-    overflow-y: scroll;
-    overflow-x:hidden;
 }
-.accounts__window .account{
+.accounts__window .grid .account{
     margin:auto;
     display: flex;
     flex-direction: column;
@@ -30,21 +26,48 @@
     cursor: pointer;
 
 }
-.accounts__window .account:hover,
-.accounts__window .account:focus{
+.accounts__window .grid .account:hover,
+.accounts__window .grid .account:focus{
     transition-duration: 0.2s;
     opacity: 0.7;
 }
-.accounts__window .account:active{
+.accounts__window .grid .account:active{
     opacity:0.4;
 }
-.accounts__window .account img{
-    width:100px;
+.accounts__window .grid .account img{
+    width:7vw;
     padding:10px;
     aspect-ratio: 1;
     border-radius: 30px;
 }
-.accounts__window .account h2{
+.accounts__window .list{
+    flex:2;
+    height:50%;
+    overflow-y: scroll;
+    padding: 0 25px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.accounts__window .list .item{
+    color: black;
+    flex-shrink: 0;
+    height:80px;
+    background-color: white;
+    text-decoration: none;
+    display: flex;
+    gap:20px;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.accounts__window .list img{
+    height: 100%;
+    padding: 10px;
+}
+.accounts__window .list .item:hover{
+    opacity: 0.8;
 }
 /*=================== PROJECTS ========================*/
 .projects-exe{
