@@ -314,9 +314,6 @@
 }
 
 /*=================== FOLDER ==========================*/
-.folder-exe{
-    background-color: orange;
-}
 .folder-exe main{
     display: flex;
     flex-direction: row;
@@ -324,35 +321,91 @@
     width: 100%;
 }
 .folder-exe .sidePanel{
-    flex:2;
-    background-color: red;
+    width:30%;
+    background-color: #1E1F22;
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
     gap:5px;
+    overflow-y:scroll;
 }
 .folder-exe .sidePanel .tray{
-    padding:5px;
-    background-color: blue;
-    border-radius: 5px;
-    font-size:1.4vw;
+    color: white;
     font-weight: bold;
 }
+.folder-exe .sidePanel .tray h3{
+    border-radius: 5px;
+    padding:5px;
+    font-size:1.6vw;
+    cursor: pointer;
+    background-color: green;
+}
 .folder-exe .sidePanel .tray ul{
-    height: 0;
     overflow: hidden;
+    padding:5px 20px;
+    height: 0; /*gets toggled*/
+    display: none;/*gets toggled*/
 }
 .folder-exe .sidePanel .tray ul.isActive{
     height:auto;
+    display: block;
+}
+
+.folder-exe .sidePanel .tray ul li{
+    list-style-type: none;
+    font-size:1.4vw;
+    cursor: pointer;
+    padding:5px;
+    border-radius: 5px;
+    transition: background-color 0.2s , color 0.2s;
+}
+.folder-exe .sidePanel .tray ul li:hover{
+    background-color: var(--primary);
+    color: black;
+}
+.folder-exe .sidePanel .tray ul li:active{
+    opacity: 0.6;
 }
 .folder-exe .wrapper{
-    flex:7;
-    background-color: blue;
-    padding:20px;
+    width:70%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .folder-exe .container{
-    background-color: greenyellow;
-    height:100%;
-    width: 100%;
+    height:90%;
+    width: 90%;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.folder-exe .container img{
+    height:100%;
+    width:100%;
+    object-fit:contain;
+    display: none;/*gets toggled*/
+    border-radius: 10px;
+}
+.folder-exe .container img.isActive{
+    display: block;
+}
+
+.folder-exe .container .code{
+    display: none;
+    padding:20px;
+    height:100%;
+    width:100%;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    user-select:text;
+    font-size:1.2vw;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: orange;
+}
+.folder-exe .container .code.isActive{
+    display: block;
 }
