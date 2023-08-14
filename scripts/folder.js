@@ -4,6 +4,8 @@ const traysBtns = document.querySelectorAll(".folder-exe .sidePanel .tray h3")
 traysBtns.forEach((trayBtn)=>{
     const tray = trayBtn.nextElementSibling;
     trayBtn.addEventListener("click",()=>{
+        const arrow = trayBtn.textContent[0] === "►" ? "▼" : "►";
+        trayBtn.textContent = arrow + trayBtn.textContent.slice(1);
         tray.classList.toggle("isActive")
     })
 })
