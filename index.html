@@ -9,9 +9,9 @@
     <title>RamOS</title>
 </head>
 <body>
-    <div class="loadingScreen">
+    <!-- <div class="loadingScreen">
         <img src="./assets/loadingIcon.png" alt="loadingIcon" draggable="false" />
-    </div>
+    </div> -->
     <div class="brightness-filter"></div>
     <!--======================= WIDGETS =============================-->
     <div class="widgets">
@@ -35,13 +35,32 @@
         <h1 class="msg404">404</h1>
         <h2 class="msgerror">Content Is Under Construction :)</h2>
     </div>
-    <div id="w-2" class="window folder__window">
+    <!--======================= Folder =============================-->
+    <div id="w-2" class="window folder-exe">
         <div class="titleBar">
             <button class="closeButton"></button>
             <button class="hideButton"></button>
         </div>
-        <h1 class="msg404">404</h1>
-        <h2 class="msgerror">Content Is Under Construction :)</h2>
+        <main>
+            <div class="sidePanel">
+                <div class="tray">
+                    Assets
+                    <ul>
+                        <li>archLogo.png</li>
+                        <li>archLogo.png</li>
+                        <li>archLogo.png</li>
+                        <li>archLogo.png</li>
+                    </ul>
+                </div>
+                <div class="tray">Scripts</div>
+                <div class="tray">Styles</div>
+            </div>
+            <div class="wrapper">
+                <div class="container">
+
+                </div>
+            </div>
+        </main>
     </div>
     <!--======================= BROWSER =============================-->
     <div id="w-3" class="window browser__window">
@@ -230,5 +249,7 @@
     <script type="module" src="./scripts/startMenu.js" ></script>
     <script type="module" src="./scripts/settings.js" ></script>
     <script type="module" src="./scripts/projects.js" ></script>
+    <script type="module" src="./scripts/folder.js" ></script>
+    <script type="module" src="./scripts/terminal.js" ></script>
 </body>
 </html>

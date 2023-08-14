@@ -312,3 +312,47 @@
 .memes-exe .newMeme:active{
     opacity:0.6;
 }
+
+/*=================== FOLDER ==========================*/
+.folder-exe{
+    background-color: orange;
+}
+.folder-exe main{
+    display: flex;
+    flex-direction: row;
+    height:100%;
+    width: 100%;
+}
+.folder-exe .sidePanel{
+    flex:2;
+    background-color: red;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+.folder-exe .sidePanel .tray{
+    padding:5px;
+    background-color: blue;
+    border-radius: 5px;
+    font-size:1.4vw;
+    font-weight: bold;
+}
+.folder-exe .sidePanel .tray ul{
+    height: 0;
+    overflow: hidden;
+}
+.folder-exe .sidePanel .tray ul.isActive{
+    height:auto;
+}
+.folder-exe .wrapper{
+    flex:7;
+    background-color: blue;
+    padding:20px;
+}
+.folder-exe .container{
+    background-color: greenyellow;
+    height:100%;
+    width: 100%;
+    border-radius: 10px;
+}
