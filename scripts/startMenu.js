@@ -1,6 +1,5 @@
 const startMenu_exe = document.querySelector(".startMenu-exe")
 const startMenu = document.querySelector(".start__buttons")
-console.log(startMenu)
 startMenu_exe.addEventListener("click",()=>{
     startMenu.classList.toggle("isActive")
 })

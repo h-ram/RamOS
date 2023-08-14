@@ -9,9 +9,9 @@
     <title>RamOS</title>
 </head>
 <body>
-    <!-- <div class="loadingScreen">
+    <div class="loadingScreen">
         <img src="./assets/loadingIcon.png" alt="loadingIcon" draggable="false" />
-    </div> -->
+    </div>
     <div class="brightness-filter"></div>
     <!--======================= WIDGETS =============================-->
     <div class="widgets">
@@ -27,13 +27,19 @@
         <h1 class="msg404">404</h1>
         <h2 class="msgerror">Content Is Under Construction :)</h2>
     </div>
-    <div id="w-1" class="window terminal__window">
+    <!--======================= TERMINAL ============================-->
+    <div id="w-1" class="window terminal-exe">
         <div class="titleBar">
             <button class="closeButton"></button>
             <button class="hideButton"></button>
         </div>
-        <h1 class="msg404">404</h1>
-        <h2 class="msgerror">Content Is Under Construction :)</h2>
+        <main>
+            <pre class="history"></pre>
+            <div class="prompt">
+                <h3 class="username">User@RamOS $ ~ </h3>
+                <input>
+            </div>
+        </main>
     </div>
     <!--======================= Folder =============================-->
     <div id="w-2" class="window folder-exe">

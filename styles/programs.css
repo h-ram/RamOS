@@ -182,11 +182,73 @@
 
 /*=================== START MENU ======================*/
 /*=================== TERMINAL ========================*/
-.terminal__window{
-    background-color: #2D0922;
-    color: white;
-    /* transform: translate(-5px,5px); */
+.terminal-exe{
+    background-color: transparent;
+    color:white;
+    font-size:1.2vw;
 }
+.terminal-exe main{
+    background-color: #2D0922;
+    height:100%;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    overflow-y:scroll;
+}
+.terminal-exe .prompt{
+    display: flex;
+}
+.terminal-exe .prompt .username{
+    color:#aaff00;
+}
+.terminal-exe .prompt input{
+    outline: none;
+    border:none;
+    flex:1;
+    font-size:1.4vw;
+    font-weight: bold;
+    background-color: transparent;
+    margin-left: 1vw;
+    color: white;
+}
+.terminal-exe .history{
+    width:100%;
+    white-space: pre-wrap;
+}
+.green{color:#aaff00;}
+.red{color:red;}
+.yellow{color:yellow;}
+.white{color:white;}
+.blue{color: cyan;}
+/*------- Terminal Light Mode -------------*/
+.lightMode{
+    transition-duration: 0.3s;
+}
+.terminal-exe main.lightMode{
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    height:100%;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    overflow-y:scroll;
+}
+.terminal-exe .prompt .username.lightMode{
+    color:purple;
+}
+.terminal-exe .prompt input.lightMode{
+    color: black;
+}
+.white.lightMode{color:black;}
+.green.lightMode{color:purple;}
+.blue.lightMode{color:black;}
 /*=================== BROWSER =========================*/
 .browser__window{
     background-color: cyan;
@@ -312,7 +374,6 @@
 .memes-exe .newMeme:active{
     opacity:0.6;
 }
-
 /*=================== FOLDER ==========================*/
 .folder-exe main{
     display: flex;
